@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dice</title>
+	<style type="text/css">
+		body{
+			background: #FFAA85;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #FFAA85, #B3315F);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #FFAA85, #B3315F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+		#show_result{
+			font-family: Comic Sans MS;
+			color: white;
+			font-size: 30vw;
+		}
+	</style>
+</head>
+<body>
+	<div id="show_result" onclick="run_dice();">go</div>
+</body>
+<script type="text/javascript">
+
+	//获取随机数 min为小，max为大；
+	function RandomNumBoth(Min,Max){
+		var Range = Max - Min;
+		var Rand = Math.random();
+        var num = Min + Math.round(Rand * Range); //四舍五入
+        return num;
+    }
+
+    //点击获取
+    function run_dice() {
+    	var result_num =RandomNumBoth(1,6);
+    	document.getElementById('show_result').innerText=result_num;
+    }
+
+</script>
+</html>
