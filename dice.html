@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dice</title>
+
+	<!--百度cdn引用jq-->
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+	<style type="text/css">
+		body{
+			background: #FFAA85;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #FFAA85, #B3315F);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #FFAA85, #B3315F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+		#show_result{
+			font-family:  'Comic Sans MS';
+			color: white;
+			font-size: 30vw;
+			text-align: center;
+		}
+		#trigger_button{
+
+			font-family:  'Comic Sans MS';
+			width: 60vw;
+			margin-left: 20vw;
+			border:1vw solid white;
+			border-radius: 3vw;
+
+			color: white;
+			font-size: 5vw;
+			text-align: center;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="show_result">n</div>
+	<div id="trigger_button">Go</div>
+</body>
+
+<script type="text/javascript">
+
+	//获取随机数 min为小，max为大；
+	function RandomNumBoth(Min,Max){
+		var Range = Max - Min;
+		var Rand = Math.random();
+        var num = Min + Math.round(Rand * Range); //四舍五入
+        return num;
+    }
+
+    //点击后简单动画效果，然后赋值
+    $("#trigger_button").click(function(){
+
+    	$("#show_result").fadeTo("slow",0.01, function type_new(){$("#show_result").html(RandomNumBoth(1,6));});
+    	
+    	$("#show_result").fadeTo("slow",1);
+    });
+
+</script>
+
+</html>
