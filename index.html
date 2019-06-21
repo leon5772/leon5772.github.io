@@ -1,9 +1,41 @@
 <html>
-	<head>
-		<title>hello world</title>
-	</head>
-	<body>
-		<div style="color: green;size: 25px;">hello world</div>
-		<div>天下风云出我辈，一入江湖岁月催。皇图霸业谈笑中，不胜人生一场醉。</div>
-	</body>
+<head>
+	<title>daliu</title>
+	<style type="text/css">
+		body{
+			background: #283048;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+		}
+		#voice1{
+			color: white;
+			font-family:"Microsoft YaHei";
+			font-size: 6vw;
+		}
+		#prepare_voice{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<pre id="voice1"></pre>
+	<div id="prepare_voice">提剑跨骑挥鬼雨，
+白骨如山鸟惊飞。
+尘事如潮人如水，
+只叹江湖几人回。</div>
+</body>
+<script type="text/javascript">
+	var index_num = 0;
+	var the_word = document.getElementById('prepare_voice').innerHTML;
+
+	//逐步取文字，写入文字
+	function type_in() {
+		document.getElementById('voice1').innerText=the_word.substring(0,index_num++);
+	}
+
+	//定时器触发函数
+	setInterval(type_in, 355);
+</script>
 </html>
